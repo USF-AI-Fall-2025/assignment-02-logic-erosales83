@@ -1,6 +1,11 @@
+
+import pandas as pd
+
 class DataInvestigator:
 
-# Testing
+    def __init__(self, df: pd.DataFrame):
+        self.df = df
+
     def baseline(col):
         pass
 
@@ -9,4 +14,3 @@ class DataInvestigator:
 
     def zeroR(col):
         pass
-
