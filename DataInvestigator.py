@@ -18,4 +18,4 @@ class DataInvestigator:
         pass
 
     def zeroR(self, col):
-        pass
+        return self.baseline(col)
