@@ -29,6 +29,11 @@ class DataInvestigator:
         if self.df is None:
             return None
 
+        column1 = self.df.get(self.df.columns[col1])
+        column2 = self.df.get(self.df.columns[col2])
+
+
+
 
     def zeroR(self, col):
         return self.baseline(col)
