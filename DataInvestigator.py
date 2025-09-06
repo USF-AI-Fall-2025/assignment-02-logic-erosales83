@@ -12,10 +12,14 @@ class DataInvestigator:
             self.df = None
 
     def baseline(self, col):
-        pass
+        if self.df is None:
+            return None
+
 
     def corr(self, col1, col2):
-        pass
+        if self.df is None:
+            return None
+
 
     def zeroR(self, col):
         return self.baseline(col)
