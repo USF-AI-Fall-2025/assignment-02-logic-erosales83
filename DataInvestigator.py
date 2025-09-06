@@ -32,7 +32,13 @@ class DataInvestigator:
         column1 = self.df.get(self.df.columns[col1])
         column2 = self.df.get(self.df.columns[col2])
 
+        if column1 is None or column1.empty:
+            return None
+        if column2 is None or column2.empty:
+            return None
 
+        correlation = column1.corr(column2)
+        return correlation
 
 
     def zeroR(self, col):
