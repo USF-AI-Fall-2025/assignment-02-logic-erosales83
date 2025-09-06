@@ -43,3 +43,8 @@ class DataInvestigator:
 
     def zeroR(self, col):
         return self.baseline(col)
+
+if __name__ == '__main__':
+    df = pd.read_csv('gallstone.csv')
+    di = DataInvestigator(df)
+    print(di.baseline(1))
