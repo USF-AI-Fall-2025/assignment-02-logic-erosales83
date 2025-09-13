@@ -3,6 +3,7 @@ import pandas as pd
 
 class DataInvestigator:
 
+    #Returns instance, checks if not empty
     def __init__(self, df: pd.DataFrame):
 
         if isinstance(df, pd.DataFrame) and not df.empty:
@@ -11,6 +12,7 @@ class DataInvestigator:
         else:
             self.df = None
 
+    #Returns the most frequent value of a given column
     def baseline(self, col):
 
         if self.df is None:
@@ -24,7 +26,7 @@ class DataInvestigator:
         values = column.mode()
         return values.iloc[0]
 
-
+    #Retruns the correlation between two given columns
     def corr(self, col1, col2):
         if self.df is None:
             return None
@@ -40,10 +42,11 @@ class DataInvestigator:
         correlation = column1.corr(column2)
         return correlation
 
-
+    #Returns the most frequent value of a given column
     def zeroR(self, col):
         return self.baseline(col)
 
+#Loads dataset, creates instance, and prints most frequent value
 if __name__ == '__main__':
     df = pd.read_csv('gallstone.csv')
     di = DataInvestigator(df)
